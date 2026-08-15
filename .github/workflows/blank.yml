@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: build-probe
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report context
+        run: |
+          echo "branch: ${GITHUB_REF_NAME}"
+          echo "sha:    ${GITHUB_SHA}"
+          echo "run:    ${GITHUB_RUN_NUMBER}"
